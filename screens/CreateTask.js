@@ -207,7 +207,10 @@ export default function CreateTask({ route, navigation }) {
       await addTask(newTask); 
 
       // Navigate to Home and pass a refresh flag
-      navigation.navigate("Main", { refresh: true }); 
+      navigation.navigate("Main", {
+        screen: "Home",
+        params: { refresh: true },
+      });
     } catch (error) {
       // Error handling
       console.error("Error adding task:", error);
