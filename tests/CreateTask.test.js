@@ -74,31 +74,6 @@ describe("CreateTask Screen", () => {
     });
   });
 
-//   it("adds task successfully", async () => {
-//     const { getByText, getByPlaceholderText, getByTestId } = render(
-//       <CreateTask
-//         navigation={navigation}
-//         route={{}}
-//       />
-//     );
-
-//     // Fill form
-//     fireEvent.changeText(getByPlaceholderText("Enter task name"), "Demo Task");
-//     fireEvent.press(getByText("Work"));
-//     fireEvent.press(getByText("High"));
-
-//     // Select date
-//     fireEvent.press(getByTestId("native.calendar.SELECT_DATE_SLOT-2025-03-27"));
-//     await waitFor(() => getByText(/Selected Date:/));
-
-//     // Submit
-//     fireEvent.press(getByText("Add Task"));
-
-//     await waitFor(() => {
-//       expect(navigation.navigate).toHaveBeenCalledWith("Home", { refresh: true });
-//     });
-//   });
-
   it("toggles category and priority buttons", () => {
     const { getByText } = render(<CreateTask navigation={navigation} route={{}} />);
 
@@ -133,52 +108,6 @@ describe("CreateTask Screen", () => {
 
     global.fetch.mockRestore();
   });
-
-//     it("submits a task successfully", async () => {
-//     const { getByPlaceholderText, getByText, queryByText, getByTestId } = render(
-//       <CreateTask navigation={mockNavigate} route={{}} />
-//     );
-
-//     fireEvent.press(getByTestId("native.calendar.SELECT_DATE_SLOT-2025-03-27"));
-//     fireEvent.changeText(getByPlaceholderText("Enter task name"), "Test Task");
-//     fireEvent.press(getByText("Add Task"));
-
-//     await waitFor(() => {
-//       expect(addTask).toHaveBeenCalledWith(
-//         expect.objectContaining({ taskName: "Test Task" })
-//       );
-//       expect(mockNavigate.navigate).toHaveBeenCalledWith("Home", { refresh: true });
-//       expect(queryByText("Please enter a task name.")).toBeNull();
-//     });
-//   });
-
-//   it("schedules reminder when reminder time is set", async () => {
-//     const { getByPlaceholderText, getByText, getByTestId } = render(
-//       <CreateTask navigation={mockNavigate} route={{}} />
-//     );
-
-//     fireEvent.press(getByTestId("native.calendar.SELECT_DATE_SLOT-2025-03-27"));
-//     fireEvent.changeText(getByPlaceholderText("Enter task name"), "Reminder Task");
-//     fireEvent.press(getByText("Add Task"));
-
-//     await waitFor(() => {
-//       expect(Notifications.scheduleNotificationAsync).toHaveBeenCalled();
-//     });
-//   });
-
-//   it("navigates to Home after successful task creation", async () => {
-//     const { getByPlaceholderText, getByText, getByTestId } = render(
-//       <CreateTask navigation={mockNavigate} route={{}} />
-//     );
-
-//     fireEvent.press(getByTestId("native.calendar.SELECT_DATE_SLOT-2025-03-27"));
-//     fireEvent.changeText(getByPlaceholderText("Enter task name"), "Nav Test");
-//     fireEvent.press(getByText("Add Task"));
-
-//     await waitFor(() => {
-//       expect(mockNavigate.navigate).toHaveBeenCalledWith("Home", { refresh: true });
-//     });
-//   });
 
   it("prefills task details from route params", async () => {
     const prefilledTask = {
